@@ -5,27 +5,79 @@
     </head>
     
     <body>
-        <!-- Exercício 1 -->
+         
+    <!-- 
+        
+    //    Exercício 2 
 
         <div>
-            <div>
-            <button onclick="criared()">Cria Quadrado</button>
-            </div>
-            <div id="box">
-                
-            </div>
+            <button style="margin-bottom: 3px" onclick="criared()">Cria Quadrado</button>
         </div>
-
+        <div>
+            <div id="box"></div>   
+        </div>
+        
         <script>           
             
             function criared() {
-                var boxElement = document.getElementById('#box')
+                var boxElement = document.createElement('div');
+                    boxElement.className = 'box';
+                    boxElement.style.backgroundColor = '#f00';
+                    boxElement.style.width = '100px'; 
+                    boxElement.style.height = '100px';
+                    boxElement.style.marginBottom = '3px';
+                    boxElement.onmouseover = function () { 
+                        boxElement.style.backgroundColor = getRandomColor()
 
-                boxElement.style.width = 100;
-                boxElement.style.height = 100;
-                boxElement.style.backgroundColor = red; 
+                    };
+                
+                var containerElement = document.querySelector('#box');
+                containerElement.appendChild(boxElement);
+
+                console.log(boxElement)
+                console.log(containerElement)
+                console.log(newColor)
 
             }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+                }
+                var newColor = getRandomColor(); 
+
+                
+
+    //  Exercício 1 
+
+        <div>
+            <button onclick="criared()">Cria Quadrado</button>
+        </div>
+        <div>
+            <div id="box"></div>   
+        </div>
+        
+        <script>           
+            
+            function criared() {
+                var boxElement = document.createElement('div');
+                    boxElement.style.backgroundColor = '#f00';
+                    boxElement.style.width = '100px'; 
+                    boxElement.style.height = '100px';  
+                
+                var containerElement = document.querySelector('#box');
+                containerElement.appendChild(boxElement);
+
+                console.log(boxElement)
+                console.log(containerElement)
+
+            }
+
+        -->
             
 
         </script> 
