@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    
+    <!-- Exercício 2 -->
+
+    <body>
+
+        <input type="text" name="nome" >
+        <button onClick="search()">Buscar</button> 
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            const inputEle = document.querySelector('input');
+                inputEle.addEventListener('keyup', function(e){
+                  var key = e.which || e.keyCode;
+                    if (key == 13) { // codigo da tecla enter
+                        // colocas aqui a tua função a rodar
+                        search()
+
+                    }
+                    });         
+
+            function search() {
+                var inputName = document.querySelector('input').value
+                var origin = "https://api.github.com/users/"+ inputName +"/repos"
+                axios.get(origin)
+                    .then(function(response){
+                        console.log(response);
+                    })
+                    .catch(function(erro) {
+                        console.warn(erro);
+                    })
+                
+            }
+
+        </script>
+
+    </body>
+    <!--
+    <body>
+             
+
+        <script>
+              
+
+    /* Exercício 01 
+
+        function checaIdade(idade) {
+            return new Promise(function(resolve,reject){
+                if (idade >= 18) {
+                    setTimeout(() => resolve('Maior de 18 anos'), 2000)
+                } else {
+                    setTimeout(() => reject('Menor de 18 anos'), 2000)
+                }
+
+            });
+
+        }
+
+            checaIdade(35)
+            .then(function() {
+            console.log("Maior que 18");
+            })
+            .catch(function() {
+            console.log("Menor que 18");
+            }); 
+
+            */
+
+        </script> 
+    </body>
+
+    -->
+
+</html>
