@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>           
+          
+            /* ---- Exercício 5 ------------------- (Agora sim, com for..of e join) */
+
+            function texto(users) {
+               
+                    for(var uhability in users) {
+                    var name = users[uhability].nome
+                    var habil = users[uhability].habilidades.join(", ")   
+                    console.log("O " + name + " tem as habilidades: " + habil);
+                }
+                
+            }
+            
+            var usuarios = [
+                    {
+                        nome: "Diego",
+                        habilidades: ["Javascript", "ReactJS", "Redux"]
+                    },
+                    {
+                        nome: "Gabriel",
+                        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                    }
+                ];
+                
+            texto(usuarios); 
+
+            /* ---- Exercício 5 ------------------- (Na marra) 
+                               
+            function texto(usuarios) {
+                var texto1 = ["O " + usuarios[0].nome + " possui as habilidades: " + usuarios[0].habilidades[0] + ", " + usuarios[0].habilidades[1] + ", " + usuarios[0].habilidades[2], "O " + usuarios[1].nome + " possui as habilidades: " + usuarios[1].habilidades[0] + ", " + usuarios[1].habilidades[1] + ", " + usuarios[1].habilidades[2]]
+
+                return texto1;
+               
+            }
+            
+            var usuarios = [
+                    {
+                        nome: "Diego",
+                        habilidades: ["Javascript", "ReactJS", "Redux"]
+                    },
+                    {
+                        nome: "Gabriel",
+                        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                    }
+                ];
+                
+            var texto1 = texto(usuarios)
+            console.log(texto1[0])
+            console.log(texto1[1]) */
+            
+
+           </script>
+    </body>
+
+</html>

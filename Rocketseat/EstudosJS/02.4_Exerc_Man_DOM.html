@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    
+    <body>
+         
+          <!--  Exercício 4 -->
+        
+        <input type="text" name="nome" >
+        <button onClick="adicionar()">Adicionar</button> 
+    
+
+        <div id="lista">
+        </div>
+
+        <script>
+
+           function list(nomes) {
+                             
+                var listElement = document.createElement('ul')
+                    listElement.id = 'allItens'
+
+                var containerElement = document.querySelector('#lista')
+                containerElement.appendChild(listElement)
+
+                for (var unames in nomes) {
+                    var itensElement = document.createElement('li')
+                        itensElement.id = nomes[unames]
+                        itensElement.innerHTML = nomes[unames]
+                    var containerItensElement = document.querySelector('#allItens')
+                    containerItensElement.appendChild(itensElement)
+
+                }
+                    
+            }
+
+            const inputEle = document.querySelector('input');
+                inputEle.addEventListener('keyup', function(e){
+                    var key = e.which || e.keyCode;
+                    if (key == 13) { // codigo da tecla enter
+                        // colocas aqui a tua função a rodar
+                       adicionar()
+                    }
+                    });            
+                       
+            function adicionar() {
+                var inputName = document.querySelector('input').value
+                if (inputName != '') {
+                    var itensElement = document.createElement('li')
+                            itensElement.id = inputName
+                            itensElement.innerHTML = inputName
+                    var containerItensElement = document.querySelector('#allItens')
+                        containerItensElement.appendChild(itensElement)
+
+                    document.querySelector('input').value = ''
+                }
+                
+            }
+           
+                                                  
+            var nomes = ["Diego", "Renato", "Zeca"];
+            list(nomes);
+
+                        
+        </script>
+    </body>
+
+</html>

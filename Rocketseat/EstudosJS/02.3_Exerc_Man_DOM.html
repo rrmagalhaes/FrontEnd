@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    
+    <body>
+         
+        <!--    Exercício 3 -->
+
+        <div id="lista">
+        </div>
+
+        <script>
+
+            function list(nomes) {
+                             
+                var listElement = document.createElement('ul')
+                    listElement.id = 'allItens'
+
+                var containerElement = document.querySelector('#lista')
+                containerElement.appendChild(listElement)
+
+                for (var unames in nomes) {
+                    var itensElement = document.createElement('li')
+                        itensElement.id = nomes[unames]
+                        itensElement.innerHTML = nomes[unames]
+                    var containerItensElement = document.querySelector('#allItens')
+                    containerItensElement.appendChild(itensElement)
+
+                }
+                    
+            }
+
+            var nomes = ["Diego", "Gabriel", "Lucas", "Renato"];
+            list(nomes);
+        </script>
+       
+    </body>
+
+</html>

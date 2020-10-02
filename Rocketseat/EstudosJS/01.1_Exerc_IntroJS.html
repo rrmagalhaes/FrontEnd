@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <script>           
+          
+          /* ---- Exercício 1 -------------------- */
+
+            var endereco = {
+                    rua: "Rua Padre Alfredo Nesi",
+                    numero: 1963,
+                    bairro: "Parque Potira",
+                    cidade: "Caucaia",
+                    uf: "CE"
+                };
+
+            function trasendereco () {
+                var completo = "O usuário mora em " + endereco.cidade + " / " + endereco.uf + ", na " + endereco.rua + " com o número " + endereco.numero + ".";
+
+                return completo; 
+            };
+            
+            var completo = trasendereco();
+            console.log(completo);      
+
+        </script>
+    </body>
+
+</html>

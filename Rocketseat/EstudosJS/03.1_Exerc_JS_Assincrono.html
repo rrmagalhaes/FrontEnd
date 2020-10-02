@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    
+    <!-- Exercício 01 -->
+
+        function checaIdade(idade) {
+            return new Promise(function(resolve,reject){
+                if (idade >= 18) {
+                    setTimeout(() => resolve('Maior de 18 anos'), 2000)
+                } else {
+                    setTimeout(() => reject('Menor de 18 anos'), 2000)
+                }
+
+            });
+
+        }
+
+            checaIdade(35)
+            .then(function() {
+            console.log("Maior que 18");
+            })
+            .catch(function() {
+            console.log("Menor que 18");
+            }); 
+
+            */
+
+        </script> 
+    </body>
+</html>
