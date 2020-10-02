@@ -8,7 +8,7 @@
 
     <body>
 
-        <input type="text" name="nome" >
+        <input type="text" name="nome" value="nickname do GitHub" onclick="limpaCx()">
         <button onClick="search()">Buscar</button> 
         <button onClick="limpa()">Limpar</button> 
 
@@ -65,15 +65,13 @@
             }
 
             function limpa() {
-                             
-                var lista = document.querySelector('#allItens')
-                var itens = document.getElementsByTagName('li')
-                               
-                for (var it in itens) {
-                    console.log(itens[it])
-                    //lista.removeChild(itens[it])
-                   
-                }                                          
+                var lista = document.querySelector('#lista').innerHTML=""             
+                
+            }
+
+            function limpaCx() {
+                var inputBox =document.querySelector('input').value=""             
+                
             }
 
             
