@@ -3,22 +3,25 @@
     <head>
         <title>Curso JavaScript</title>
     </head>
+
+    <body>
+        <script>
     
-    <!-- Exercício 01 -->
+        <!-- Exercício 01 -->
 
-        function checaIdade(idade) {
-            return new Promise(function(resolve,reject){
-                if (idade >= 18) {
-                    setTimeout(() => resolve('Maior de 18 anos'), 2000)
-                } else {
-                    setTimeout(() => reject('Menor de 18 anos'), 2000)
-                }
+            function checaIdade(idade) {
+                return new Promise(function(resolve,reject){
+                    if (idade >= 18) {
+                        setTimeout(() => resolve('Maior de 18 anos'), 2000)
+                    } else {
+                        setTimeout(() => reject('Menor de 18 anos'), 2000)
+                    }
 
-            });
+                });
 
-        }
+            }
 
-            checaIdade(35)
+            checaIdade(17)
             .then(function() {
             console.log("Maior que 18");
             })
@@ -26,7 +29,7 @@
             console.log("Menor que 18");
             }); 
 
-            */
+            
 
         </script> 
     </body>
