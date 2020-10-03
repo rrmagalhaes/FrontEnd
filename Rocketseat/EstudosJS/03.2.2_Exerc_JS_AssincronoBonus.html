@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Curso JavaScript</title>
+    </head>
+    
+    <!-- Exercício 2 -->
+
+    <body>
+
+        <input type="text" name="nome" value="nickname do GitHub" onclick="limpaCx()">
+        <button onClick="search()">Buscar</button> 
+        <button onClick="limpa()">Limpar</button> 
+
+        <div id="lista">
+        </div>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            const inputEle = document.querySelector('input');
+                inputEle.addEventListener('keyup', function(e){
+                  var key = e.which || e.keyCode;
+                    if (key == 13) { // codigo da tecla enter
+                        // colocas aqui a tua função a rodar
+                        search()
+
+                    }
+                    });         
+
+            function search() {
+                var inputName = document.querySelector('input').value
+                list()
+
+                var origin = "https://api.github.com/users/"+ inputName +"/repos"
+                axios.get(origin)
+                    .then(function(response){
+                        var repositorios = response.data
+
+                        for (var resp in repositorios){
+                            var itensElement = document.createElement('li')
+                                itensElement.id = repositorios[resp].name
+                                itensElement.innerHTML = repositorios[resp].name
+
+                            var containerItensElement = document.querySelector('#allItens')
+                                containerItensElement.appendChild(itensElement)
+                            //console.log(repositorios[resp].name);
+                        }
+                        //console.log(repositorios[0].name)
+                        //console.log(response);
+                    })
+                    .catch(function(erro) {
+                        console.warn(erro);
+                    })
+                
+            }
+
+            function list() {
+                             
+                             var listElement = document.createElement('ul')
+                                 listElement.id = 'allItens'
+             
+                             var containerElement = document.querySelector('#lista')
+                             containerElement.appendChild(listElement)
+
+            }
+
+            function limpa() {
+                var lista = document.querySelector('#lista').innerHTML=""             
+                
+            }
+
+            function limpaCx() {
+                var inputBox =document.querySelector('input').value=""             
+                
+            }
+
+            
+
+        </script>
+
+    </body>
+   
+</html>
