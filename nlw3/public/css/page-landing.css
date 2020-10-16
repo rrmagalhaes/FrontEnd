@@ -39,8 +39,8 @@
 
 @media (min-width: 760px) {
     #container {
-        padding: 5rem 1rem;
-        background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 80vh, 56rem);
+        padding: 3rem 1rem;
+        background: url("../images/bg.svg") no-repeat 80% / 45% /*clamp(30rem, 75vh, 56rem)*/;
     }
 
     header {
