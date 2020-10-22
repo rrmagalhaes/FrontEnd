@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF_8">
         <meta name="viewport" content="width-device-width, initial-scale=1.0">
@@ -38,6 +38,20 @@
             </aside>
 
             <div id="mapid" class="animate-appear"></div>
+            
+            <div class="orphanages">
+                <!-- Bloco que atribui os valores vindos da Backend Handlebars(template engine) -->
+                {{#each orphanages}}
+                    <span hidden
+                        data-id="{{this.id}}"
+                        data-name="{{this.name}}"
+                        data-lat="{{this.lat}}"
+                        data-lng="{{this.lng}}"
+                    ></span>
+                {{/each}}
+            </div>
+            
+            
             <a href="create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
                 <img src="/images/plus.svg" alt="Criar orfanato">
             </a>

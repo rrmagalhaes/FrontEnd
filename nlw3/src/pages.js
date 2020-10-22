@@ -11,7 +11,7 @@ module.exports = {
     },
 
     orphanages(request, response) {
-        return response.render('orphanages', { orphaganes })
+        return response.render('orphanages', { orphanages })
     },
 
     createOrphanage(request, response) {

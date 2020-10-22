@@ -31,7 +31,7 @@ module.exports = [
         id: 2,
         name: "Cotolengo 2",
         lat: "-3.7508694",
-        lng: "-38.6653717",
+        lng: "-38.6703717",
         description: "Presta assistência a crianças e adolescentes em vulnerabilidade social",
         images: [
 
