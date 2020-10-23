@@ -36,7 +36,7 @@ orphanageSpan.forEach( span => {
         lat: span.dataset.lat,
         lng: span.dataset.lng
     }
-    console.log(orphanage)
+    //console.log(orphanage)
     addMarker(orphanage)
 })
 
