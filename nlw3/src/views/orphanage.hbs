@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF_8" />
     <meta name="viewport" content="width-device-width, initial-scale=1.0" />
-    <title>Cotolengo | Happy</title>
+    <title>{{orphanage.name}} | Happy</title>
 
     <link
       rel="stylesheet"
@@ -38,54 +38,40 @@
           <img src="/images/map-marker.svg" alt="Happy">
 
           <footer>
-              <button onclick="history.back()">
-                  <img src="/images/arrow-back.svg" alt="Voltar">
+              <button> <!-- onclick="history.back()" Pega a última página acessada, porém não usada aqui-->
+                  <a href="/orphanages">
+                    <img src="/images/arrow-back.svg" alt="Voltar">
+                  </a>
               </button>
+              
           </footer>
       </aside>
-      <!-- tempo da aula 02 -> 2.02.52 -->
       <main class="animate-appear with-sidebar">
         <div class="orphanage-details">
-          <img src="/images/home.jpg" alt="Cotolengo" />
+          <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}" />
 
           <div class="images">
+            {{#each orphanage.images}}
             <button onclick="selectImage(event)" class="active" type="button">
-              <img src="https://source.unsplash.com/random?id=1" alt="Cotolengo" />
+              <img src="{{this}}" alt="{{orphanage.name}}" />
             </button>
+            {{/each}}
 
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=2" alt="Cotolengo" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=3" alt="Cotolengo" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=4" alt="Cotolengo" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=5" alt="Cotolengo" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=6" alt="Cotolengo" />
-            </button>
+            
           </div>
 
           <div class="orphanage-details-content">
-            <h1>Cotolengo</h1>
+            <h1>{{orphanage.name}}</h1>
 
             <p>
-              Presta assistência a crianças e adolescentes em vulnerabilidade
-              social
+              {{orphanage.about}}
             </p>
 
             <div class="map-container">
               <div id="mapid"></div>
+              <span data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}"></span>
               <footer>
-                <a href="">Ver rotas no Google Maps</a>
+                <a target="_blank" href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=15">Ver rotas no Google Maps</a>
               </footer>
             </div>
 
@@ -93,26 +79,34 @@
 
             <h2>Instruções para visita</h2>
 
-            <p>Venha se sentir a vontade e fazer a festa da criançada.</p>
+            <p>{{orphanage.instructions}}</p>
 
             <div class="open-details">
               <div class="hour">
                 <img src="/images/clock.svg" alt="Horários" />
-                Horário de Visitas das 08h às 18h.
+                {{orphanage.opening_hours}}
               </div>
-              <div class="open-on-weekends">
-                <img src="/images/info.svg" alt="Informação" />
-                Atendemos fim de semana
+              {{#if orphanage.open_on_weekends}}
+                <div class="open-on-weekends open">
+                  <img src="/images/info.svg" alt="Informação" />
+                  Atendemos fim de semana
+                </div>
+              {{else}}
+                <div class="open-on-weekends closed">
+                <img src="/images/info-red.svg" alt="Informação" />
+                Não Atendemos fim de semana
               </div>
+              {{/if}}
+
             </div>
 
-            <button class="primary-button" type="button">
+            <a target="_blank" href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Olá, quero conhecer mais sobre vocês!" class="primary-button" type="button">
               <img
                 src="/images/whatsapp.svg"
                 alt="Chamar no WhatsApp"
               />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>

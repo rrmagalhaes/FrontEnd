@@ -38,8 +38,8 @@ Database.then(async function (db){
     //console.log(selectedOrphanages) 
 
     //consultar somente um orfanato pelo id
-    const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "3"')
-    console.log(orphanage)
+    //const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "3"')
+    //console.log(orphanage)
 
     //deletar somente um orfanato pelo id
     //console.log(await db.all('DELETE FROM orphanages WHERE id = "2"'))
