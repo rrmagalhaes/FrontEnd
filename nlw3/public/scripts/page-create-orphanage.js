@@ -81,3 +81,15 @@ function toggleSelect(event) {
   input.value = button.dataset.value
   
 }
+
+function validate(event) {
+  
+  //validar se lat e lng estão preencidos
+  const needsLatAndLng = document.querySelector('[name="lat"]').value
+  console.log(needsLatAndLng)
+  
+  if(needsLatAndLng == "") {
+    event.preventDefault()
+    alert('Selecione um ponto no mapa')
+  }
+}

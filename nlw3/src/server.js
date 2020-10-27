@@ -21,7 +21,7 @@ server
     .get('/orphanage', pages.orphanage)
     .get('/orphanages', pages.orphanages)
     .get('/create-orphanage', pages.createOrphanage)
-    //.post('/save-orphanage', pages.saveOrphanage)
+    .post('/save-orphanage', pages.saveOrphanage)
 
     
     

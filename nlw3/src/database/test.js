@@ -34,8 +34,8 @@ Database.then(async function (db){
     // })
     
     //consultar dados na tabela
-    //const selectedOrphanages = await db.all("SELECT * FROM orphanages")
-    //console.log(selectedOrphanages) 
+    const selectedOrphanages = await db.all("SELECT * FROM orphanages")
+    console.log(selectedOrphanages) 
 
     //consultar somente um orfanato pelo id
     //const orphanage = await db.all('SELECT * FROM orphanages WHERE id = "3"')
